@@ -3,10 +3,10 @@ script "install-mongo" do
   user "root"
   cwd "/usr/local"
   code <<-EOH
-  wget -O - http://downloads.mongodb.org/linux/mongodb-linux-x86_64-1.0.1.tgz | tar xzf -
+  wget -O - http://downloads.mongodb.org/linux/mongodb-linux-x86_64-1.2.2.tgz | tar xzf -
   ln -nfs mongodb-linux-x86_64-1.0.1 mongodb
   EOH
-  not_if { File.directory?("/usr/local/mongodb-x86_64-1.0.1") }
+  not_if { File.directory?("/usr/local/mongodb-x86_64-1.2.2") }
 end
 
 directory "/db/mongodb/masterdb" do
