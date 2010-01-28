@@ -4,7 +4,7 @@ script "install-mongo" do
   cwd "/usr/local"
   code <<-EOH
   wget -O - http://downloads.mongodb.org/linux/mongodb-linux-x86_64-1.2.2.tgz | tar xzf -
-  ln -nfs mongodb-linux-x86_64-1.0.1 mongodb
+  ln -nfs /usr/local/mongodb-linux-x86_64-1.2.2 /usr/local/mongodb
   EOH
   not_if { File.directory?("/usr/local/mongodb-x86_64-1.2.2") }
 end
