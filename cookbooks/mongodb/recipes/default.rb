@@ -32,10 +32,6 @@ remote_file "/etc/init.d/mongodb" do
   mode 0755
 end
 
-# service "mongodb" do
-#   action [ :start ]
-# end
-
 execute "run-mongodb" do
   command %Q{
     /etc/init.d/mongodb start
