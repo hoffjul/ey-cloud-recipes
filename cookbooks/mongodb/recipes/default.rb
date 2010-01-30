@@ -9,20 +9,20 @@ script "install-mongo" do
   not_if { File.directory?("/usr/local/mongodb-x86_64-1.2.2") }
 end
 
-directory "/db/mongodb/masterdb" do
+directory "/data/mongodb/masterdb" do
   owner node[:owner_name]
   group node[:owner_name]
   mode 0755
   recursive true
-  not_if { File.directory?("/db/mongodb/masterdb") }
+  not_if { File.directory?("/data/mongodb/masterdb") }
 end
 
-directory "/db/mongodb/slavedb" do
+directory "/data/mongodb/slavedb" do
   owner node[:owner_name]
   group node[:owner_name]
   mode 0755
   recursive true
-  not_if { File.directory?("/db/mongodb/slavedb") }
+  not_if { File.directory?("/data/mongodb/slavedb") }
 end
 
 remote_file "/etc/init.d/mongodb" do
