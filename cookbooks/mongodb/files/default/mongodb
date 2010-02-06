@@ -30,7 +30,7 @@ start() {
 
   ebegin "Starting Slave ${SVCNAME}"
 
-  args="--dbpath $MONGODB_SLAVE_DATA --port $MONGODB_SLAVE_PORT --bind_ip $MONGODB_IP"
+  args="--dbpath $MONGODB_SLAVE_DATA --port $MONGODB_SLAVE_PORT --source $MONGODB_IP:$MONGODB_MASTER_PORT --bind_ip $MONGODB_IP"
 
   start-stop-daemon --background --start --chuid ${MONGODB_USER} --pidfile \
   "${MONGODB_SLAVE_PID_FILE}" --make-pidfile --exec ${MONGODB_EXEC} \
